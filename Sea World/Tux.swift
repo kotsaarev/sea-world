@@ -8,15 +8,17 @@
 
 import Cocoa
 
-class Tux: Individuum {
+class Tux: Animal {
     
-    override init() {
+    override var stepsToReproduce: Int {
+        return 3
+    }
+    
+    required init() {
         super.init()
         
         self.name = "Tux"
         self.image = #imageLiteral(resourceName: "tux")
-        
-        self.stepsToReproduction = 3
     }
     
 }

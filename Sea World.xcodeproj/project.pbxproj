@@ -11,9 +11,12 @@
 		CE1504B81E4ECBCD00EA95A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1504B71E4ECBCD00EA95A7 /* ViewController.swift */; };
 		CE1504BA1E4ECBCD00EA95A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE1504B91E4ECBCD00EA95A7 /* Assets.xcassets */; };
 		CE1504BD1E4ECBCD00EA95A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE1504BB1E4ECBCD00EA95A7 /* Main.storyboard */; };
+		CE2A67E81E58599A0097F5AC /* World.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2A67E71E58599A0097F5AC /* World.swift */; };
+		CE669AC51E56C5FD007F7DDE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE669AC41E56C5FD007F7DDE /* Constants.swift */; };
 		CEC4DA771E4F3FAB00C43F98 /* Orca.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4DA761E4F3FAB00C43F98 /* Orca.swift */; };
 		CEC4DA791E4F3FC200C43F98 /* Tux.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4DA781E4F3FC200C43F98 /* Tux.swift */; };
-		CEC940211E4F09C500CFDAF4 /* Individuum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC940201E4F09C500CFDAF4 /* Individuum.swift */; };
+		CEC940211E4F09C500CFDAF4 /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC940201E4F09C500CFDAF4 /* Animal.swift */; };
+		CEEA7B8E1E570CC20082FE97 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA7B8D1E570CC20082FE97 /* Cell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,9 +26,12 @@
 		CE1504B91E4ECBCD00EA95A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE1504BC1E4ECBCD00EA95A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE1504BE1E4ECBCD00EA95A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE2A67E71E58599A0097F5AC /* World.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World.swift; sourceTree = "<group>"; };
+		CE669AC41E56C5FD007F7DDE /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CEC4DA761E4F3FAB00C43F98 /* Orca.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Orca.swift; sourceTree = "<group>"; };
 		CEC4DA781E4F3FC200C43F98 /* Tux.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tux.swift; sourceTree = "<group>"; };
-		CEC940201E4F09C500CFDAF4 /* Individuum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Individuum.swift; sourceTree = "<group>"; };
+		CEC940201E4F09C500CFDAF4 /* Animal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
+		CEEA7B8D1E570CC20082FE97 /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +64,35 @@
 		CE1504B41E4ECBCD00EA95A7 /* Sea World */ = {
 			isa = PBXGroup;
 			children = (
+				CE944DE31E57F798004DE779 /* World */,
+				CE944DE41E57F7E5004DE779 /* Support */,
 				CE1504B51E4ECBCD00EA95A7 /* AppDelegate.swift */,
-				CEC940201E4F09C500CFDAF4 /* Individuum.swift */,
-				CEC4DA761E4F3FAB00C43F98 /* Orca.swift */,
-				CEC4DA781E4F3FC200C43F98 /* Tux.swift */,
+				CE669AC41E56C5FD007F7DDE /* Constants.swift */,
 				CE1504B71E4ECBCD00EA95A7 /* ViewController.swift */,
 				CE1504B91E4ECBCD00EA95A7 /* Assets.xcassets */,
 				CE1504BB1E4ECBCD00EA95A7 /* Main.storyboard */,
 				CE1504BE1E4ECBCD00EA95A7 /* Info.plist */,
 			);
 			path = "Sea World";
+			sourceTree = "<group>";
+		};
+		CE944DE31E57F798004DE779 /* World */ = {
+			isa = PBXGroup;
+			children = (
+				CEC940201E4F09C500CFDAF4 /* Animal.swift */,
+				CEC4DA761E4F3FAB00C43F98 /* Orca.swift */,
+				CEC4DA781E4F3FC200C43F98 /* Tux.swift */,
+				CE2A67E71E58599A0097F5AC /* World.swift */,
+			);
+			name = World;
+			sourceTree = "<group>";
+		};
+		CE944DE41E57F7E5004DE779 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				CEEA7B8D1E570CC20082FE97 /* Cell.swift */,
+			);
+			name = Support;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,10 +167,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE1504B81E4ECBCD00EA95A7 /* ViewController.swift in Sources */,
+				CEEA7B8E1E570CC20082FE97 /* Cell.swift in Sources */,
 				CE1504B61E4ECBCD00EA95A7 /* AppDelegate.swift in Sources */,
+				CE2A67E81E58599A0097F5AC /* World.swift in Sources */,
 				CEC4DA791E4F3FC200C43F98 /* Tux.swift in Sources */,
 				CEC4DA771E4F3FAB00C43F98 /* Orca.swift in Sources */,
-				CEC940211E4F09C500CFDAF4 /* Individuum.swift in Sources */,
+				CEC940211E4F09C500CFDAF4 /* Animal.swift in Sources */,
+				CE669AC51E56C5FD007F7DDE /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

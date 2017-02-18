@@ -9,7 +9,7 @@
 import Cocoa
 
 class ViewController: NSViewController {
-
+    
     @IBOutlet weak var tableView: NSTableView!
     
     @IBOutlet weak var stepLabel: NSTextField!
@@ -17,18 +17,7 @@ class ViewController: NSViewController {
     @IBOutlet weak var tuxesLabel: NSTextField!
     @IBOutlet weak var totalLabel: NSTextField!
     
-    fileprivate let numberOfColumns: Int = 10
-    fileprivate let numberOfRows: Int = 15
-    
-    fileprivate let percentOfOrcas: Int = 5
-    fileprivate let percentOfTuxes: Int = 50
-    
-    fileprivate let minCellHeight: CGFloat = max(#imageLiteral(resourceName: "tux").size.height, #imageLiteral(resourceName: "orca").size.height)
-    fileprivate let minCellWidth: CGFloat = max(#imageLiteral(resourceName: "tux").size.width, #imageLiteral(resourceName: "orca").size.width)
-    
-    fileprivate var step = 0
-    
-    fileprivate var population: [[Individuum?]] = [[]]
+    fileprivate var world: World!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,16 +49,14 @@ class ViewController: NSViewController {
 extension ViewController {
     
     fileprivate func setUpTable() {
-        assert((numberOfColumns >= 3) && (numberOfRows >= 3), "table too small \"\(numberOfColumns)x\(numberOfRows)\", must be >= \"3x3\"")
-        
         for tableColimn in tableView.tableColumns {
             tableView.removeTableColumn(tableColimn)
         }
         
-        for i in 0 ..< numberOfColumns {
-            let tableColumn: NSTableColumn = NSTableColumn(identifier: "\(i)")
+        for _ in 0 ..< Constants.numberOfColumns {
+            let tableColumn: NSTableColumn = NSTableColumn()
             
-            tableColumn.minWidth = minCellWidth
+            tableColumn.minWidth = Constants.minCellWidth
             
             tableView.addTableColumn(tableColumn)
         }
@@ -78,41 +65,17 @@ extension ViewController {
     }
     
     fileprivate func setUpWorld() {
-        assert((percentOfOrcas + percentOfTuxes) <= 100, "wrong total ratio")
+        world = World.init()
         
-        let numberOfСells: Int = numberOfColumns * numberOfRows
-        let numberOfOrcas: Int = numberOfСells * percentOfOrcas / 100
-        let numberOfTuxes: Int = numberOfСells * percentOfTuxes / 100
-        let numberOfEmpty: Int = numberOfСells - numberOfOrcas - numberOfTuxes
-        
-        var total: [Individuum?] = []
-        let orcas: [Individuum?] = [Orca](repeating: Orca(), count: numberOfOrcas)
-        let tuxes: [Individuum?] = [Tux](repeating: Tux(), count: numberOfTuxes)
-        let empty: [Individuum?] = [Individuum?](repeating: nil, count: numberOfEmpty)
-        
-        step = 0
-        
-        total.append(contentsOf: orcas)
-        total.append(contentsOf: tuxes)
-        total.append(contentsOf: empty)
-        
-        total = total.sorted(by: { (_,_) in arc4random() < arc4random() })
-        
-        population = [[Individuum?]](repeating: [Individuum?](repeating: nil, count: numberOfColumns), count: numberOfRows)
-        
-        for i in 0 ..< numberOfRows {
-            for j in 0 ..< numberOfColumns {
-                let index: Int = i * numberOfColumns + j
-                
-                population[i][j] = total[index]
-            }
-        }
+        tableView.reloadData()
         
         updateLables()
     }
     
     fileprivate func updateWorld() {
-        step += 1
+        world.live()
+        
+        tableView.reloadData()
         
         updateLables()
     }
@@ -123,11 +86,15 @@ extension ViewController {
 extension ViewController {
     
     fileprivate func updateLables() {
-        let numberOfСells: Int = numberOfColumns * numberOfRows
-        let numberOfOrcas: Int = numberOfСells * percentOfOrcas / 100
-        let numberOfTuxes: Int = numberOfСells * percentOfTuxes / 100
+        let numberOfOrcas: Int = world.population.filter( { $0 is Orca } ).count
+        let numberOfTuxes: Int = world.population.filter( { $0 is Tux } ).count
         
-        stepLabel.stringValue = "Step: \(step)"
+        let numberOfСells: Int = Constants.numberOfColumns * Constants.numberOfRows
+        
+        let percentOfOrcas: Int = numberOfOrcas * 100 / numberOfСells
+        let percentOfTuxes: Int = numberOfTuxes * 100 / numberOfСells
+        
+        stepLabel.stringValue = "Day: \(world.step)"
         
         orcasLabel.stringValue = "Orcas: \(numberOfOrcas) (\(percentOfOrcas)%)"
         tuxesLabel.stringValue = "Tuxes: \(numberOfTuxes) (\(percentOfTuxes)%)"
@@ -142,7 +109,7 @@ extension ViewController {
     func windowDidResize() {
         NSAnimationContext.beginGrouping()
         NSAnimationContext.current().duration = 0
-        tableView.noteHeightOfRows(withIndexesChanged: IndexSet(integersIn: 0..<numberOfRows))
+        tableView.noteHeightOfRows(withIndexesChanged: IndexSet(integersIn: 0..<Constants.numberOfRows))
         NSAnimationContext.endGrouping()
     }
     
@@ -152,7 +119,7 @@ extension ViewController {
 extension ViewController: NSTableViewDataSource {
     
     func numberOfRows(in tableView: NSTableView) -> Int {
-        return numberOfRows
+        return Constants.numberOfRows
     }
     
 }
@@ -164,32 +131,27 @@ extension ViewController: NSTableViewDelegate {
         guard
             let cell = tableView.make(withIdentifier: "cellView", owner: nil) as? NSTableCellView,
             let tableColumn = tableColumn,
-            let column = Int(tableColumn.identifier) else
+            let column = tableView.tableColumns.index(of: tableColumn) else
         {
             return nil
         }
         
-        let index: Int = row * numberOfColumns + column
-        
-        if let individuum = population[row][column] {
-            cell.imageView?.image = individuum.image
-            cell.toolTip = individuum.name
+        if let animal: Animal = world.cells[column][row].animal {
+            cell.imageView?.image = animal.image
+            cell.toolTip = animal.name
         } else {
             cell.imageView?.image = nil
             cell.toolTip = nil
         }
         
-//        print("i = \(column)")
-//        print("j = \(row)")
-        print("k = \(index)")
-//        print("")
-        
         return cell
     }
     
     func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
+        let minCellHeight: CGFloat = max(#imageLiteral(resourceName: "tux").size.height, #imageLiteral(resourceName: "orca").size.height)
+        
         if let scrollView = tableView.enclosingScrollView {
-            let height: CGFloat = scrollView.bounds.size.height / CGFloat(numberOfRows(in: tableView))
+            let height: CGFloat = scrollView.bounds.size.height / CGFloat(Constants.numberOfRows)
             
             return height >= minCellHeight ? height : minCellHeight
         }
