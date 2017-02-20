@@ -36,10 +36,10 @@ class Orca: Animal {
             stepsWithoutEat += 1
         }
         
-        if isTimeToReproduce(), let baby = reproduce() {
+        if isTimeToReproduce() {
             stepsWithoutReproduce = 1
             
-            return baby
+            return reproduce()
         } else {
             stepsWithoutReproduce += 1
         }
