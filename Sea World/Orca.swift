@@ -20,7 +20,7 @@ class Orca: Animal {
     }
     
     required init() {
-        self.stepsWithoutEat = 0
+        self.stepsWithoutEat = 1
         
         super.init()
         
@@ -37,7 +37,7 @@ class Orca: Animal {
         }
         
         if isTimeToReproduce(), let baby = reproduce() {
-            stepsWithoutReproduce = 0
+            stepsWithoutReproduce = 1
             
             return baby
         } else {
@@ -45,7 +45,7 @@ class Orca: Animal {
         }
         
         if eatTux() {
-            stepsWithoutEat = 0
+            stepsWithoutEat = 1
             
             return nil
         } else {

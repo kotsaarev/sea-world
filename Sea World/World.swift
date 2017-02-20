@@ -13,7 +13,7 @@ class World {
     var cells: [[Cell]]
     var population: [Animal]
     
-    var step: Int = 0
+    var step: Int
     
     init() {
         let numberOfColumns: Int = Constants.numberOfColumns
@@ -90,10 +90,10 @@ class World {
     }
     
     func live() {
-        var babies: [Animal] = [Animal]()
-        
         // shuffle
         population = population.sorted(by: { (_,_) in arc4random() < arc4random() })
+        
+        var babies: [Animal] = [Animal]()
         
         for animal in population {
             if let baby: Animal = animal.live() {

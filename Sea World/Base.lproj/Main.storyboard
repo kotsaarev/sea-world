@@ -785,8 +785,8 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ME-Fe-s4k">
-                                <rect key="frame" x="18" y="20" width="68" height="17"/>
-                                <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Total: 55%" usesSingleLineMode="YES" id="Rm7-mt-5kQ">
+                                <rect key="frame" x="18" y="20" width="86" height="17"/>
+                                <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Animals: 55%" usesSingleLineMode="YES" id="Rm7-mt-5kQ">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -816,10 +816,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="animalsLabel" destination="6ME-Fe-s4k" id="yKY-Pj-yMJ"/>
                         <outlet property="orcasLabel" destination="IPa-an-mNj" id="dYj-Pk-bCj"/>
                         <outlet property="stepLabel" destination="czU-Kw-kZf" id="Diq-UW-ceU"/>
                         <outlet property="tableView" destination="OZy-Em-LQM" id="eTG-jZ-lCK"/>
-                        <outlet property="totalLabel" destination="6ME-Fe-s4k" id="yKY-Pj-yMJ"/>
                         <outlet property="tuxesLabel" destination="V9W-Xg-fUR" id="g0t-IQ-NAj"/>
                     </connections>
                 </viewController>

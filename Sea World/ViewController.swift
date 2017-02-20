@@ -15,7 +15,7 @@ class ViewController: NSViewController {
     @IBOutlet weak var stepLabel: NSTextField!
     @IBOutlet weak var orcasLabel: NSTextField!
     @IBOutlet weak var tuxesLabel: NSTextField!
-    @IBOutlet weak var totalLabel: NSTextField!
+    @IBOutlet weak var animalsLabel: NSTextField!
     
     fileprivate var world: World!
     
@@ -43,12 +43,8 @@ class ViewController: NSViewController {
         updateWorld()
     }
     
-}
-
-// MARK: - SetUp
-extension ViewController {
-    
-    fileprivate func setUpTable() {
+    // MARK: - SetUp
+    private func setUpTable() {
         for tableColimn in tableView.tableColumns {
             tableView.removeTableColumn(tableColimn)
         }
@@ -64,15 +60,16 @@ extension ViewController {
         tableView.sizeToFit()
     }
     
-    fileprivate func setUpWorld() {
-        world = World.init()
+    private func setUpWorld() {
+        world = World()
         
         tableView.reloadData()
         
         updateLables()
     }
     
-    fileprivate func updateWorld() {
+    // MARK: - Life cycle
+    private func updateWorld() {
         world.live()
         
         tableView.reloadData()
@@ -80,32 +77,26 @@ extension ViewController {
         updateLables()
     }
     
-}
-
-// MARK: - Support
-extension ViewController {
-    
-    fileprivate func updateLables() {
+    // MARK: - Support
+    private func updateLables() {
+        let numberOfCells: Int = Constants.numberOfColumns * Constants.numberOfRows
+        
         let numberOfOrcas: Int = world.population.filter( { $0 is Orca } ).count
         let numberOfTuxes: Int = world.population.filter( { $0 is Tux } ).count
+        let numberOfAnimals: Int = numberOfOrcas + numberOfTuxes
         
-        let numberOfСells: Int = Constants.numberOfColumns * Constants.numberOfRows
-        
-        let percentOfOrcas: Int = numberOfOrcas * 100 / numberOfСells
-        let percentOfTuxes: Int = numberOfTuxes * 100 / numberOfСells
+        let percentOfOrcas: Double = Double(numberOfOrcas) * 100 / Double(numberOfCells)
+        let percentOfTuxes: Double = Double(numberOfTuxes) * 100 / Double(numberOfCells)
+        let percentOfAnimals: Double = percentOfOrcas + percentOfTuxes
         
         stepLabel.stringValue = "Day: \(world.step)"
         
         orcasLabel.stringValue = "Orcas: \(numberOfOrcas) (\(percentOfOrcas)%)"
         tuxesLabel.stringValue = "Tuxes: \(numberOfTuxes) (\(percentOfTuxes)%)"
-        totalLabel.stringValue = "Total: \(numberOfOrcas + numberOfTuxes) (\(percentOfOrcas + percentOfTuxes)%)"
+        animalsLabel.stringValue = "Animals: \(numberOfAnimals) (\(percentOfAnimals)%)"
     }
     
-}
-
-// MARK: - Notifications
-extension ViewController {
-    
+    // MARK: - Notifications
     func windowDidResize() {
         NSAnimationContext.beginGrouping()
         NSAnimationContext.current().duration = 0
@@ -139,9 +130,15 @@ extension ViewController: NSTableViewDelegate {
         if let animal: Animal = world.cells[column][row].animal {
             cell.imageView?.image = animal.image
             cell.toolTip = animal.name
+            
+            cell.wantsLayer = true
+            cell.layer?.backgroundColor = animal.color.cgColor
         } else {
             cell.imageView?.image = nil
             cell.toolTip = nil
+            
+            cell.wantsLayer = true
+            cell.layer?.backgroundColor = nil
         }
         
         return cell
