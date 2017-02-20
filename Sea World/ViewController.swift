@@ -17,6 +17,12 @@ class ViewController: NSViewController {
     @IBOutlet weak var tuxesLabel: NSTextField!
     @IBOutlet weak var animalsLabel: NSTextField!
     
+    @IBOutlet weak var numberOfColumnsField: NSTextField!
+    @IBOutlet weak var numberOfRowsField: NSTextField!
+    
+    fileprivate var numberOfColumns: Int = Constants.numberOfColumns
+    fileprivate var numberOfRows: Int = Constants.numberOfRows
+    
     fileprivate var world: World!
     
     override func viewDidLoad() {
@@ -28,15 +34,31 @@ class ViewController: NSViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
-        setUpTable()
+        numberOfColumnsField.integerValue = numberOfColumns
+        numberOfRowsField.integerValue = numberOfRows
+        
         setUpWorld()
+        setUpTable()
         
         NotificationCenter.default.addObserver(self, selector: #selector(windowDidResize), name: .NSWindowDidResize, object: nil)
     }
     
     // MARK: - IBAction
     @IBAction func restart(_ sender: Any) {
+        if numberOfColumnsField.integerValue >= Constants.areaDimension {
+            numberOfColumns = numberOfColumnsField.integerValue
+        } else {
+            numberOfColumnsField.integerValue = numberOfColumns
+        }
+        
+        if numberOfRowsField.integerValue >= Constants.areaDimension {
+            numberOfRows = numberOfRowsField.integerValue
+        } else {
+            numberOfRowsField.integerValue = numberOfRows
+        }
+        
         setUpWorld()
+        setUpTable()
     }
     
     @IBAction func tapOnTableView(_ sender: Any) {
@@ -49,7 +71,7 @@ class ViewController: NSViewController {
             tableView.removeTableColumn(tableColimn)
         }
         
-        for _ in 0 ..< Constants.numberOfColumns {
+        for _ in 0 ..< numberOfColumns {
             let tableColumn: NSTableColumn = NSTableColumn()
             
             tableColumn.minWidth = Constants.minCellWidth
@@ -61,7 +83,7 @@ class ViewController: NSViewController {
     }
     
     private func setUpWorld() {
-        world = World()
+        world = World(numberOfColumns: numberOfColumns, numberOfRows: numberOfRows)
         
         tableView.reloadData()
         
@@ -79,7 +101,7 @@ class ViewController: NSViewController {
     
     // MARK: - Support
     private func updateLables() {
-        let numberOfCells: Int = Constants.numberOfColumns * Constants.numberOfRows
+        let numberOfCells: Int = numberOfColumns * numberOfRows
         
         let numberOfOrcas: Int = world.population.filter( { $0 is Orca } ).count
         let numberOfTuxes: Int = world.population.filter( { $0 is Tux } ).count
@@ -89,18 +111,18 @@ class ViewController: NSViewController {
         let percentOfTuxes: Double = Double(numberOfTuxes) * 100 / Double(numberOfCells)
         let percentOfAnimals: Double = percentOfOrcas + percentOfTuxes
         
-        stepLabel.stringValue = "Day: \(world.step)"
+        stepLabel.stringValue = String(world.step)
         
-        orcasLabel.stringValue = "Orcas: \(numberOfOrcas) (\(percentOfOrcas)%)"
-        tuxesLabel.stringValue = "Tuxes: \(numberOfTuxes) (\(percentOfTuxes)%)"
-        animalsLabel.stringValue = "Animals: \(numberOfAnimals) (\(percentOfAnimals)%)"
+        orcasLabel.stringValue = "\(numberOfOrcas) (\(String(format:"%.0f", percentOfOrcas))%)"
+        tuxesLabel.stringValue = "\(numberOfTuxes) (\(String(format:"%.0f", percentOfTuxes))%)"
+        animalsLabel.stringValue = "\(numberOfAnimals) (\(String(format:"%.0f", percentOfAnimals))%)"
     }
     
     // MARK: - Notifications
     func windowDidResize() {
         NSAnimationContext.beginGrouping()
         NSAnimationContext.current().duration = 0
-        tableView.noteHeightOfRows(withIndexesChanged: IndexSet(integersIn: 0..<Constants.numberOfRows))
+        tableView.noteHeightOfRows(withIndexesChanged: IndexSet(integersIn: 0..<numberOfRows))
         NSAnimationContext.endGrouping()
     }
     
@@ -110,7 +132,7 @@ class ViewController: NSViewController {
 extension ViewController: NSTableViewDataSource {
     
     func numberOfRows(in tableView: NSTableView) -> Int {
-        return Constants.numberOfRows
+        return numberOfRows
     }
     
 }
@@ -130,15 +152,9 @@ extension ViewController: NSTableViewDelegate {
         if let animal: Animal = world.cells[column][row].animal {
             cell.imageView?.image = animal.image
             cell.toolTip = animal.name
-            
-            cell.wantsLayer = true
-            cell.layer?.backgroundColor = animal.color.cgColor
         } else {
             cell.imageView?.image = nil
             cell.toolTip = nil
-            
-            cell.wantsLayer = true
-            cell.layer?.backgroundColor = nil
         }
         
         return cell
@@ -148,7 +164,7 @@ extension ViewController: NSTableViewDelegate {
         let minCellHeight: CGFloat = max(#imageLiteral(resourceName: "tux").size.height, #imageLiteral(resourceName: "orca").size.height)
         
         if let scrollView = tableView.enclosingScrollView {
-            let height: CGFloat = scrollView.bounds.size.height / CGFloat(Constants.numberOfRows)
+            let height: CGFloat = scrollView.bounds.size.height / CGFloat(numberOfRows)
             
             return height >= minCellHeight ? height : minCellHeight
         }

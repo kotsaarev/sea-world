@@ -20,8 +20,6 @@ class Animal {
     }
     var stepsWithoutReproduce: Int
     
-    var color: NSColor
-    
     required init() {
         cell = Cell()
         
@@ -29,14 +27,6 @@ class Animal {
         image = NSImage()
         
         stepsWithoutReproduce = 1
-        
-        let r: CGFloat = CGFloat(arc4random_uniform(UInt32(255)))
-        let g: CGFloat = CGFloat(arc4random_uniform(UInt32(255)))
-        let b: CGFloat = CGFloat(arc4random_uniform(UInt32(255)))
-        
-        let a: CGFloat = CGFloat(arc4random_uniform(UInt32(100)))
-        
-        color = NSColor(calibratedRed: r/255, green: g/255, blue: b/255, alpha: a/100)
     }
     
     func live() -> Animal? {
@@ -64,15 +54,9 @@ class Animal {
             return
         }
         
-        var freeArea: [Cell?] = cell.area.filter{ $0?.animal == nil }
+        let randIndex: Int = Int(arc4random_uniform(UInt32(cell.area.count)))
         
-        if freeArea.count == 0 {
-            return
-        }
-        
-        let randIndex: Int = Int(arc4random_uniform(UInt32(freeArea.count)))
-        
-        if let freeCell: Cell = freeArea[randIndex] {
+        if let freeCell: Cell = cell.area[randIndex], freeCell.animal == nil {
             freeCell.animal = self
             
             cell.animal = nil

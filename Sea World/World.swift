@@ -15,10 +15,7 @@ class World {
     
     var step: Int
     
-    init() {
-        let numberOfColumns: Int = Constants.numberOfColumns
-        let numberOfRows: Int = Constants.numberOfRows
-        
+    init(numberOfColumns: Int, numberOfRows: Int) {
         let percentOfOrcas: Int = Constants.percentOfOrcas
         let percentOfTuxes: Int = Constants.percentOfTuxes
         
@@ -89,6 +86,7 @@ class World {
         
     }
     
+    // MARK: - Life cycle
     func live() {
         // shuffle
         population = population.sorted(by: { (_,_) in arc4random() < arc4random() })

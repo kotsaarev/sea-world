@@ -761,66 +761,153 @@
                                 </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czU-Kw-kZf">
-                                <rect key="frame" x="18" y="95" width="48" height="17"/>
-                                <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Step: 0" usesSingleLineMode="YES" id="uTj-zA-FkR">
+                                <rect key="frame" x="18" y="95" width="36" height="17"/>
+                                <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Step:" usesSingleLineMode="YES" id="uTj-zA-FkR">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R74-vI-0g7">
+                                <rect key="frame" x="78" y="95" width="13" height="17"/>
+                                <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="0" usesSingleLineMode="YES" id="hOK-eE-gBt">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IPa-an-mNj">
-                                <rect key="frame" x="18" y="70" width="66" height="17"/>
-                                <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Orcas: 5%" usesSingleLineMode="YES" id="NJI-lg-TPe">
+                                <rect key="frame" x="18" y="70" width="44" height="17"/>
+                                <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Orcas:" usesSingleLineMode="YES" id="NJI-lg-TPe">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pj9-fC-b0b">
+                                <rect key="frame" x="78" y="70" width="23" height="17"/>
+                                <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="5%" usesSingleLineMode="YES" id="pg4-Wu-jwh">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V9W-Xg-fUR">
-                                <rect key="frame" x="18" y="45" width="73" height="17"/>
-                                <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Tuxes: 50%" usesSingleLineMode="YES" id="GsX-L2-mb5">
+                                <rect key="frame" x="18" y="45" width="44" height="17"/>
+                                <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Tuxes:" usesSingleLineMode="YES" id="GsX-L2-mb5">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yQc-Pz-kCy">
+                                <rect key="frame" x="78" y="45" width="31" height="17"/>
+                                <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="50%" usesSingleLineMode="YES" id="Gzd-ad-Apw">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ME-Fe-s4k">
-                                <rect key="frame" x="18" y="20" width="86" height="17"/>
-                                <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Animals: 55%" usesSingleLineMode="YES" id="Rm7-mt-5kQ">
+                                <rect key="frame" x="18" y="20" width="56" height="17"/>
+                                <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Animals:" usesSingleLineMode="YES" id="Rm7-mt-5kQ">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7l7-3S-SFU">
+                                <rect key="frame" x="78" y="20" width="31" height="17"/>
+                                <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="55%" usesSingleLineMode="YES" id="lsz-Rq-JRB">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eck-tW-Bbt">
+                                <rect key="frame" x="395" y="95" width="127" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Number of columns:" id="AD6-lG-hby">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lFN-zw-TRh">
+                                <rect key="frame" x="397" y="67" width="123" height="22"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="SeP-s0-jp6">
+                                    <numberFormatter key="formatter" formatterBehavior="default10_4" usesGroupingSeparator="NO" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" id="jEC-5C-nWq" customClass="OnlyIntegerNumberFormatter" customModule="Sea_World" customModuleProvider="target"/>
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ruh-pz-kcO">
+                                <rect key="frame" x="395" y="45" width="127" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Number of rows:" id="OCp-0B-TiO">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KJG-Fy-DdK">
+                                <rect key="frame" x="397" y="17" width="123" height="22"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="3t3-tp-QiE">
+                                    <numberFormatter key="formatter" formatterBehavior="default10_4" usesGroupingSeparator="NO" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" id="yNF-sC-LfO" customClass="OnlyIntegerNumberFormatter" customModule="Sea_World" customModuleProvider="target"/>
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="6ME-Fe-s4k" secondAttribute="bottom" constant="20" id="1IB-FP-OcE"/>
+                            <constraint firstItem="V9W-Xg-fUR" firstAttribute="leading" secondItem="6ME-Fe-s4k" secondAttribute="leading" id="3rs-uM-AYa"/>
+                            <constraint firstItem="lFN-zw-TRh" firstAttribute="baseline" secondItem="IPa-an-mNj" secondAttribute="baseline" id="4OM-rt-kXg"/>
                             <constraint firstAttribute="trailing" secondItem="3a9-Xt-Moq" secondAttribute="trailing" constant="20" id="4zM-IJ-yqQ"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="czU-Kw-kZf" secondAttribute="trailing" constant="20" id="C4O-PQ-9Lh"/>
+                            <constraint firstItem="yQc-Pz-kCy" firstAttribute="leading" secondItem="7l7-3S-SFU" secondAttribute="leading" id="Cs4-i4-FvF"/>
                             <constraint firstItem="ofX-he-yeX" firstAttribute="top" secondItem="3a9-Xt-Moq" secondAttribute="bottom" constant="20" id="D4M-UY-mhM"/>
+                            <constraint firstItem="KJG-Fy-DdK" firstAttribute="width" secondItem="Ruh-pz-kcO" secondAttribute="width" id="G7Q-qf-QuD"/>
+                            <constraint firstItem="eck-tW-Bbt" firstAttribute="trailing" secondItem="lFN-zw-TRh" secondAttribute="trailing" id="GHe-29-JAd"/>
+                            <constraint firstItem="Ruh-pz-kcO" firstAttribute="trailing" secondItem="KJG-Fy-DdK" secondAttribute="trailing" id="HY1-C5-xI2"/>
                             <constraint firstItem="ofX-he-yeX" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="IMG-GZ-YZm"/>
+                            <constraint firstItem="lFN-zw-TRh" firstAttribute="width" secondItem="eck-tW-Bbt" secondAttribute="width" id="L39-oq-SGQ"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="V9W-Xg-fUR" secondAttribute="trailing" constant="20" id="Pzr-5R-wp1"/>
+                            <constraint firstItem="7l7-3S-SFU" firstAttribute="baseline" secondItem="6ME-Fe-s4k" secondAttribute="baseline" id="Sds-zi-fJH"/>
                             <constraint firstItem="IPa-an-mNj" firstAttribute="top" secondItem="czU-Kw-kZf" secondAttribute="bottom" constant="8" id="Ss0-M3-vdo"/>
                             <constraint firstItem="3a9-Xt-Moq" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="Vd4-jj-5ls"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6ME-Fe-s4k" secondAttribute="trailing" constant="20" id="W3u-vk-4k4"/>
                             <constraint firstItem="3a9-Xt-Moq" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="Y4d-Hg-kYs"/>
                             <constraint firstItem="czU-Kw-kZf" firstAttribute="top" secondItem="ofX-he-yeX" secondAttribute="bottom" constant="8" id="Ylc-rf-k9O"/>
-                            <constraint firstItem="IPa-an-mNj" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="g92-Yp-64R"/>
+                            <constraint firstItem="KJG-Fy-DdK" firstAttribute="baseline" secondItem="6ME-Fe-s4k" secondAttribute="baseline" id="aV9-LN-1uZ"/>
+                            <constraint firstAttribute="trailing" secondItem="KJG-Fy-DdK" secondAttribute="trailing" constant="20" id="ckE-3d-GDr"/>
+                            <constraint firstItem="czU-Kw-kZf" firstAttribute="leading" secondItem="IPa-an-mNj" secondAttribute="leading" id="ckO-ah-lRO"/>
                             <constraint firstItem="3a9-Xt-Moq" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="h3q-08-RXw"/>
+                            <constraint firstItem="yQc-Pz-kCy" firstAttribute="baseline" secondItem="V9W-Xg-fUR" secondAttribute="baseline" id="iGb-TS-5tE"/>
                             <constraint firstItem="V9W-Xg-fUR" firstAttribute="top" secondItem="IPa-an-mNj" secondAttribute="bottom" constant="8" id="jMi-7M-ro7"/>
-                            <constraint firstItem="V9W-Xg-fUR" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="pN7-37-VER"/>
+                            <constraint firstItem="7l7-3S-SFU" firstAttribute="leading" secondItem="6ME-Fe-s4k" secondAttribute="trailing" constant="8" id="leq-vD-UGq"/>
+                            <constraint firstItem="Pj9-fC-b0b" firstAttribute="baseline" secondItem="IPa-an-mNj" secondAttribute="baseline" id="lzM-FG-JQR"/>
+                            <constraint firstItem="Pj9-fC-b0b" firstAttribute="leading" secondItem="yQc-Pz-kCy" secondAttribute="leading" id="oQN-G1-boI"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="IPa-an-mNj" secondAttribute="trailing" constant="20" id="plg-gB-I1E"/>
-                            <constraint firstItem="czU-Kw-kZf" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="sNj-vx-o7u"/>
+                            <constraint firstItem="R74-vI-0g7" firstAttribute="leading" secondItem="Pj9-fC-b0b" secondAttribute="leading" id="q3K-mc-XSy"/>
+                            <constraint firstItem="eck-tW-Bbt" firstAttribute="baseline" secondItem="czU-Kw-kZf" secondAttribute="baseline" id="r1O-MD-XWc"/>
+                            <constraint firstItem="eck-tW-Bbt" firstAttribute="width" secondItem="Ruh-pz-kcO" secondAttribute="width" id="rfa-RD-qqu"/>
+                            <constraint firstItem="Ruh-pz-kcO" firstAttribute="baseline" secondItem="V9W-Xg-fUR" secondAttribute="baseline" id="t6V-0V-aDj"/>
+                            <constraint firstItem="lFN-zw-TRh" firstAttribute="trailing" secondItem="KJG-Fy-DdK" secondAttribute="trailing" id="tLO-eN-IyR"/>
+                            <constraint firstItem="IPa-an-mNj" firstAttribute="leading" secondItem="V9W-Xg-fUR" secondAttribute="leading" id="twl-XW-7Zh"/>
                             <constraint firstItem="6ME-Fe-s4k" firstAttribute="top" secondItem="V9W-Xg-fUR" secondAttribute="bottom" constant="8" id="vMW-36-Jai"/>
+                            <constraint firstItem="R74-vI-0g7" firstAttribute="baseline" secondItem="czU-Kw-kZf" secondAttribute="baseline" id="xlh-Kw-vlk"/>
                             <constraint firstItem="6ME-Fe-s4k" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="y9y-ai-ujw"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="animalsLabel" destination="6ME-Fe-s4k" id="yKY-Pj-yMJ"/>
-                        <outlet property="orcasLabel" destination="IPa-an-mNj" id="dYj-Pk-bCj"/>
-                        <outlet property="stepLabel" destination="czU-Kw-kZf" id="Diq-UW-ceU"/>
+                        <outlet property="animalsLabel" destination="7l7-3S-SFU" id="pXe-g2-nLG"/>
+                        <outlet property="numberOfColumnsField" destination="lFN-zw-TRh" id="HUw-2k-Aqg"/>
+                        <outlet property="numberOfRowsField" destination="KJG-Fy-DdK" id="xD2-5l-FYB"/>
+                        <outlet property="orcasLabel" destination="Pj9-fC-b0b" id="EdA-47-Rl6"/>
+                        <outlet property="stepLabel" destination="R74-vI-0g7" id="TGg-x2-MEs"/>
                         <outlet property="tableView" destination="OZy-Em-LQM" id="eTG-jZ-lCK"/>
-                        <outlet property="tuxesLabel" destination="V9W-Xg-fUR" id="g0t-IQ-NAj"/>
+                        <outlet property="tuxesLabel" destination="yQc-Pz-kCy" id="n8w-Hv-hUQ"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

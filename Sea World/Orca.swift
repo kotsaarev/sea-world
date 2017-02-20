@@ -55,7 +55,7 @@ class Orca: Animal {
         return nil
     }
     
-    // MARK: - Life cicle
+    // MARK: - Life cycle
     func eatTux() -> Bool {
         guard let cell = cell else {
             return false
@@ -71,6 +71,7 @@ class Orca: Animal {
         
         if let tuxCell: Cell = tuxArea[randIndex] {
             tuxCell.animal?.die()
+            
             tuxCell.animal = self
             
             cell.animal = nil
