@@ -56,11 +56,11 @@ class Animal {
         
         let randIndex: Int = Int(arc4random_uniform(UInt32(cell.area.count)))
         
-        if let freeCell: Cell = cell.area[randIndex], freeCell.animal == nil {
-            freeCell.animal = self
+        if let targetCell: Cell = cell.area[randIndex], targetCell.animal == nil {
+            targetCell.animal = self
             
             cell.animal = nil
-            self.cell = freeCell
+            self.cell = targetCell
         }
     }
     

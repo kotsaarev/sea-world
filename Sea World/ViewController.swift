@@ -92,7 +92,9 @@ class ViewController: NSViewController {
     
     // MARK: - Life cycle
     private func updateWorld() {
-        world.live()
+        guard world.live() else {
+            return
+        }
         
         tableView.reloadData()
         

@@ -87,7 +87,11 @@ class World {
     }
     
     // MARK: - Life cycle
-    func live() {
+    func live() -> Bool {
+        if (population.count == 0) || ((population.count == (cells.count * cells[0].count)) && (population.contains(where: { $0 is Orca }) == false)) {
+            return false
+        }
+        
         // shuffle
         population = population.sorted(by: { (_,_) in arc4random() < arc4random() })
         
@@ -99,15 +103,17 @@ class World {
             }
         }
         
-        // remove corpses
-        population = population.filter( { $0.cell != nil } )
-        
         // add babies
         for baby in babies {
             population.append(baby)
         }
         
+        // remove corpses
+        population = population.filter( { $0.cell != nil } )
+        
         step += 1
+        
+        return true
     }
     
 }
