@@ -737,10 +737,6 @@
                                         </tableView>
                                     </subviews>
                                 </clipView>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="750" id="UgH-K0-Khc"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="500" id="jgM-Mh-VQ0"/>
-                                </constraints>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="Gwm-BQ-aVk">
                                     <rect key="frame" x="1" y="119" width="223" height="15"/>
                                     <autoresizingMask key="autoresizingMask"/>
@@ -760,47 +756,47 @@
                                     <action selector="restart:" target="XfG-lQ-9wD" id="uaw-yb-1VS"/>
                                 </connections>
                             </button>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czU-Kw-kZf">
-                                <rect key="frame" x="18" y="95" width="36" height="17"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czU-Kw-kZf">
+                                <rect key="frame" x="18" y="95" width="56" height="17"/>
                                 <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Step:" usesSingleLineMode="YES" id="uTj-zA-FkR">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R74-vI-0g7">
-                                <rect key="frame" x="78" y="95" width="13" height="17"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R74-vI-0g7">
+                                <rect key="frame" x="78" y="95" width="31" height="17"/>
                                 <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="0" usesSingleLineMode="YES" id="hOK-eE-gBt">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IPa-an-mNj">
-                                <rect key="frame" x="18" y="70" width="44" height="17"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IPa-an-mNj">
+                                <rect key="frame" x="18" y="70" width="56" height="17"/>
                                 <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Orcas:" usesSingleLineMode="YES" id="NJI-lg-TPe">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pj9-fC-b0b">
-                                <rect key="frame" x="78" y="70" width="23" height="17"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pj9-fC-b0b">
+                                <rect key="frame" x="78" y="70" width="31" height="17"/>
                                 <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="5%" usesSingleLineMode="YES" id="pg4-Wu-jwh">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V9W-Xg-fUR">
-                                <rect key="frame" x="18" y="45" width="44" height="17"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V9W-Xg-fUR">
+                                <rect key="frame" x="18" y="45" width="56" height="17"/>
                                 <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Tuxes:" usesSingleLineMode="YES" id="GsX-L2-mb5">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yQc-Pz-kCy">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yQc-Pz-kCy">
                                 <rect key="frame" x="78" y="45" width="31" height="17"/>
                                 <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="50%" usesSingleLineMode="YES" id="Gzd-ad-Apw">
                                     <font key="font" metaFont="system"/>
@@ -808,7 +804,7 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ME-Fe-s4k">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ME-Fe-s4k">
                                 <rect key="frame" x="18" y="20" width="56" height="17"/>
                                 <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Animals:" usesSingleLineMode="YES" id="Rm7-mt-5kQ">
                                     <font key="font" metaFont="system"/>
@@ -816,7 +812,7 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7l7-3S-SFU">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7l7-3S-SFU">
                                 <rect key="frame" x="78" y="20" width="31" height="17"/>
                                 <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="55%" usesSingleLineMode="YES" id="lsz-Rq-JRB">
                                     <font key="font" metaFont="system"/>
@@ -860,35 +856,38 @@
                             </textField>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="czU-Kw-kZf" firstAttribute="width" secondItem="IPa-an-mNj" secondAttribute="width" id="10g-T1-yB2"/>
                             <constraint firstAttribute="bottom" secondItem="6ME-Fe-s4k" secondAttribute="bottom" constant="20" id="1IB-FP-OcE"/>
                             <constraint firstItem="V9W-Xg-fUR" firstAttribute="leading" secondItem="6ME-Fe-s4k" secondAttribute="leading" id="3rs-uM-AYa"/>
                             <constraint firstItem="lFN-zw-TRh" firstAttribute="baseline" secondItem="IPa-an-mNj" secondAttribute="baseline" id="4OM-rt-kXg"/>
                             <constraint firstAttribute="trailing" secondItem="3a9-Xt-Moq" secondAttribute="trailing" constant="20" id="4zM-IJ-yqQ"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="czU-Kw-kZf" secondAttribute="trailing" constant="20" id="C4O-PQ-9Lh"/>
+                            <constraint firstItem="eck-tW-Bbt" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="R74-vI-0g7" secondAttribute="trailing" constant="20" id="5tO-HX-WNw"/>
                             <constraint firstItem="yQc-Pz-kCy" firstAttribute="leading" secondItem="7l7-3S-SFU" secondAttribute="leading" id="Cs4-i4-FvF"/>
                             <constraint firstItem="ofX-he-yeX" firstAttribute="top" secondItem="3a9-Xt-Moq" secondAttribute="bottom" constant="20" id="D4M-UY-mhM"/>
                             <constraint firstItem="KJG-Fy-DdK" firstAttribute="width" secondItem="Ruh-pz-kcO" secondAttribute="width" id="G7Q-qf-QuD"/>
                             <constraint firstItem="eck-tW-Bbt" firstAttribute="trailing" secondItem="lFN-zw-TRh" secondAttribute="trailing" id="GHe-29-JAd"/>
                             <constraint firstItem="Ruh-pz-kcO" firstAttribute="trailing" secondItem="KJG-Fy-DdK" secondAttribute="trailing" id="HY1-C5-xI2"/>
                             <constraint firstItem="ofX-he-yeX" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="IMG-GZ-YZm"/>
+                            <constraint firstItem="IPa-an-mNj" firstAttribute="width" secondItem="V9W-Xg-fUR" secondAttribute="width" id="KzO-ej-guf"/>
                             <constraint firstItem="lFN-zw-TRh" firstAttribute="width" secondItem="eck-tW-Bbt" secondAttribute="width" id="L39-oq-SGQ"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="V9W-Xg-fUR" secondAttribute="trailing" constant="20" id="Pzr-5R-wp1"/>
+                            <constraint firstItem="yQc-Pz-kCy" firstAttribute="width" secondItem="Pj9-fC-b0b" secondAttribute="width" id="LKe-sG-5mG"/>
+                            <constraint firstItem="7l7-3S-SFU" firstAttribute="width" secondItem="yQc-Pz-kCy" secondAttribute="width" id="NtG-em-iA5"/>
                             <constraint firstItem="7l7-3S-SFU" firstAttribute="baseline" secondItem="6ME-Fe-s4k" secondAttribute="baseline" id="Sds-zi-fJH"/>
                             <constraint firstItem="IPa-an-mNj" firstAttribute="top" secondItem="czU-Kw-kZf" secondAttribute="bottom" constant="8" id="Ss0-M3-vdo"/>
                             <constraint firstItem="3a9-Xt-Moq" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="Vd4-jj-5ls"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6ME-Fe-s4k" secondAttribute="trailing" constant="20" id="W3u-vk-4k4"/>
                             <constraint firstItem="3a9-Xt-Moq" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="Y4d-Hg-kYs"/>
                             <constraint firstItem="czU-Kw-kZf" firstAttribute="top" secondItem="ofX-he-yeX" secondAttribute="bottom" constant="8" id="Ylc-rf-k9O"/>
                             <constraint firstItem="KJG-Fy-DdK" firstAttribute="baseline" secondItem="6ME-Fe-s4k" secondAttribute="baseline" id="aV9-LN-1uZ"/>
                             <constraint firstAttribute="trailing" secondItem="KJG-Fy-DdK" secondAttribute="trailing" constant="20" id="ckE-3d-GDr"/>
                             <constraint firstItem="czU-Kw-kZf" firstAttribute="leading" secondItem="IPa-an-mNj" secondAttribute="leading" id="ckO-ah-lRO"/>
+                            <constraint firstItem="Pj9-fC-b0b" firstAttribute="width" secondItem="R74-vI-0g7" secondAttribute="width" id="dAD-VI-MEl"/>
                             <constraint firstItem="3a9-Xt-Moq" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="h3q-08-RXw"/>
                             <constraint firstItem="yQc-Pz-kCy" firstAttribute="baseline" secondItem="V9W-Xg-fUR" secondAttribute="baseline" id="iGb-TS-5tE"/>
                             <constraint firstItem="V9W-Xg-fUR" firstAttribute="top" secondItem="IPa-an-mNj" secondAttribute="bottom" constant="8" id="jMi-7M-ro7"/>
-                            <constraint firstItem="7l7-3S-SFU" firstAttribute="leading" secondItem="6ME-Fe-s4k" secondAttribute="trailing" constant="8" id="leq-vD-UGq"/>
                             <constraint firstItem="Pj9-fC-b0b" firstAttribute="baseline" secondItem="IPa-an-mNj" secondAttribute="baseline" id="lzM-FG-JQR"/>
+                            <constraint firstItem="V9W-Xg-fUR" firstAttribute="width" secondItem="6ME-Fe-s4k" secondAttribute="width" id="mg1-yR-c1a"/>
+                            <constraint firstItem="R74-vI-0g7" firstAttribute="leading" secondItem="czU-Kw-kZf" secondAttribute="trailing" constant="8" id="ngH-pz-oFp"/>
                             <constraint firstItem="Pj9-fC-b0b" firstAttribute="leading" secondItem="yQc-Pz-kCy" secondAttribute="leading" id="oQN-G1-boI"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="IPa-an-mNj" secondAttribute="trailing" constant="20" id="plg-gB-I1E"/>
                             <constraint firstItem="R74-vI-0g7" firstAttribute="leading" secondItem="Pj9-fC-b0b" secondAttribute="leading" id="q3K-mc-XSy"/>
                             <constraint firstItem="eck-tW-Bbt" firstAttribute="baseline" secondItem="czU-Kw-kZf" secondAttribute="baseline" id="r1O-MD-XWc"/>
                             <constraint firstItem="eck-tW-Bbt" firstAttribute="width" secondItem="Ruh-pz-kcO" secondAttribute="width" id="rfa-RD-qqu"/>

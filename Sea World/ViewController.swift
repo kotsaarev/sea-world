@@ -39,8 +39,18 @@ class ViewController: NSViewController {
         
         setUpWorld()
         setUpTable()
+    }
+    
+    override func viewDidAppear() {
+        super.viewDidAppear()
         
         NotificationCenter.default.addObserver(self, selector: #selector(windowDidResize), name: .NSWindowDidResize, object: nil)
+    }
+    
+    override func viewDidDisappear() {
+        super.viewDidDisappear()
+        
+        NotificationCenter.default.removeObserver(self, name: .NSWindowDidResize, object: nil)
     }
     
     // MARK: - IBAction
