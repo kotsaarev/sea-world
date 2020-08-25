@@ -61,7 +61,7 @@ class Orca: Animal {
             return false
         }
         
-        var tuxArea: [Cell?] = cell.area.filter{ $0?.animal is Tux }
+        let tuxArea: [Cell?] = cell.area.filter{ $0?.animal is Tux }
         
         if tuxArea.count == 0 {
             return false

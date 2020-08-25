@@ -44,13 +44,13 @@ class ViewController: NSViewController {
     override func viewDidAppear() {
         super.viewDidAppear()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(windowDidResize), name: .NSWindowDidResize, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(windowDidResize), name: NSWindow.didResizeNotification, object: nil)
     }
     
     override func viewDidDisappear() {
         super.viewDidDisappear()
         
-        NotificationCenter.default.removeObserver(self, name: .NSWindowDidResize, object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSWindow.didResizeNotification, object: nil)
     }
     
     // MARK: - IBAction
@@ -131,9 +131,9 @@ class ViewController: NSViewController {
     }
     
     // MARK: - Notifications
-    func windowDidResize() {
+    @objc func windowDidResize() {
         NSAnimationContext.beginGrouping()
-        NSAnimationContext.current().duration = 0
+        NSAnimationContext.current.duration = 0
         tableView.noteHeightOfRows(withIndexesChanged: IndexSet(integersIn: 0..<numberOfRows))
         NSAnimationContext.endGrouping()
     }
@@ -153,10 +153,11 @@ extension ViewController: NSTableViewDataSource {
 extension ViewController: NSTableViewDelegate {
     
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
+        let identifier = NSUserInterfaceItemIdentifier(rawValue: "cellView")
         guard
-            let cell = tableView.make(withIdentifier: "cellView", owner: nil) as? NSTableCellView,
+            let cell = tableView.makeView(withIdentifier: identifier, owner: nil) as? NSTableCellView,
             let tableColumn = tableColumn,
-            let column = tableView.tableColumns.index(of: tableColumn) else
+            let column = tableView.tableColumns.firstIndex(of: tableColumn) else
         {
             return nil
         }

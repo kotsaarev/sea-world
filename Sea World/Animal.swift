@@ -69,7 +69,7 @@ class Animal {
             return nil
         }
         
-        var freeArea: [Cell?] = cell.area.filter{ $0?.animal == nil }
+        let freeArea: [Cell?] = cell.area.filter{ $0?.animal == nil }
         
         if freeArea.count == 0 {
             return nil
