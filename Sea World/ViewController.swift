@@ -69,6 +69,7 @@ class ViewController: NSViewController {
         
         setUpWorld()
         setUpTable()
+        updateLables()
     }
     
     @IBAction func tapOnTableView(_ sender: Any) {
@@ -80,7 +81,8 @@ class ViewController: NSViewController {
         for tableColimn in tableView.tableColumns {
             tableView.removeTableColumn(tableColimn)
         }
-        
+        tableView.reloadData() // apply changes immediately
+
         for _ in 0 ..< numberOfColumns {
             let tableColumn: NSTableColumn = NSTableColumn()
             
@@ -94,10 +96,6 @@ class ViewController: NSViewController {
     
     private func setUpWorld() {
         world = World(numberOfColumns: numberOfColumns, numberOfRows: numberOfRows)
-        
-        tableView.reloadData()
-        
-        updateLables()
     }
     
     // MARK: - Life cycle
